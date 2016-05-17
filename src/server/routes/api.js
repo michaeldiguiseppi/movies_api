@@ -14,7 +14,7 @@ function getMovieByUpc(req, res, next) {
   Movies().select().where('UPC', upc).then(function (data) {
     res.json(data);
   }).catch(function(err) {
-    res.json(err);
+    res.json({'status': 'error'});
   });
 }
 
