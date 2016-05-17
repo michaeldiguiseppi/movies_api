@@ -13,6 +13,8 @@ function getMovieByUpc(req, res, next) {
   var upc = req.params.upc;
   Movies().select().where('UPC', upc).then(function (data) {
     res.json(data);
+  }).catch(function(err) {
+    res.json(err);
   });
 }
 
