@@ -11,9 +11,6 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: {
-      database: 'movie_api_prod',
-      user: 'ec2-user',
-    }
+    connection: process.env.DATABASE_URL,
   }
 };
